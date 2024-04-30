@@ -19,7 +19,14 @@ export function SavedQueries(params) {
             item.queryName === params.selectedQueryName ? "selected" : ""
           }
         >
-          {trimTitle + ': "' + item.q + '"'}{" "}
+          {trimTitle +
+            ': "' +
+            item.q +
+            `" : "` +
+            item.language +
+            `" : "` +
+            item.pageSize +
+            `"`}{" "}
         </li>
       );
     });
