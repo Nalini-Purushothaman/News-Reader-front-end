@@ -12,7 +12,7 @@ export function Articles(params) {
     console.log("current User:", currentUser.user);
   }
   return (
-    <div>
+    <div className="scroll-container auto">
       <br />
       <div className="box">
         <span className="title">Current Query Details</span>
