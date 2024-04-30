@@ -1,5 +1,5 @@
 export function SavedQueries(params) {
-    let currentUser = null;
+  let currentUser = null;
   if (params.currentUser) {
     currentUser = params.currentUser.user ? params.currentUser.user : "na";
     console.log("current User:", currentUser.user);
@@ -24,6 +24,15 @@ export function SavedQueries(params) {
       );
     });
   }
+  let emptyList = [];
+  function onResetClick(event) {
+    let result = window.confirm(
+      "Are you sure you want to reset the saved queries?"
+    );
+    if (result) {
+      params.setSavedQueries(emptyList);
+    }
+  }
 
   return (
     <div>
@@ -34,6 +43,13 @@ export function SavedQueries(params) {
           <li>No Saved Queries, Yet!</li>
         )}
       </ul>
+      <span style={{ display: "block", backgroundColor: "#eee" }}>
+        <input
+          type="button"
+          value="Reset Saved Queries"
+          onClick={onResetClick}
+        />
+      </span>
     </div>
   );
 }

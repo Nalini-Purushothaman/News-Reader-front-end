@@ -177,6 +177,7 @@ export function NewsReader() {
               selectedQueryName={query.queryName}
               onQuerySelect={onSavedQuerySelect}
               currentUser={currentUser}
+              setSavedQueries={setSavedQueries}
             />
           </div>
           <div className="box">
