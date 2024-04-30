@@ -172,7 +172,7 @@ export function NewsReader() {
           </div>
           <div className="box">
             <span className="title">Articles List</span>
-            <Articles query={query} data={data} />
+            <Articles query={query} data={data} currentUser={currentUser} />
           </div>
         </section>
       </div>
