@@ -1,7 +1,7 @@
 import { QueryForm } from "./QueryForm";
 import { Articles } from "./Articles";
 import { useState, useEffect } from "react";
-import { exampleQuery, exampleData } from "./data";
+import { exampleQuery, exampleData, loadDefaultList } from "./data";
 import { SavedQueries } from "./SavedQueries";
 import { LoginForm } from "./LoginForm";
 
@@ -20,9 +20,17 @@ export function NewsReader() {
     getNews(query);
   }, [query]);
 
+  // useEffect(() => {
+  //   getQueryList();
+  // }, []);
+
   useEffect(() => {
-    getQueryList();
-  }, []);
+    if (currentUser === null) {
+      setSavedQueries(loadDefaultList);
+    } else if (currentUser.user === "admin" || currentUser.user === "guest") {
+      getQueryList();
+    }
+  }, [currentUser]);
 
   async function login() {
     if (currentUser !== null) {
@@ -168,6 +176,7 @@ export function NewsReader() {
               savedQueries={savedQueries}
               selectedQueryName={query.queryName}
               onQuerySelect={onSavedQuerySelect}
+              currentUser={currentUser}
             />
           </div>
           <div className="box">

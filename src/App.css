@@ -7,7 +7,7 @@ ol{
   height: 400px; /* Adjust height as needed */
   width: 300px;
   overflow-y: auto;
-  border: 1px solid #ddd; /* Optional border for styling */
+  border: 1px solid #068f83; /* Optional border for styling */
 }
 
 header,p{

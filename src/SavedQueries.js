@@ -1,4 +1,9 @@
 export function SavedQueries(params) {
+    let currentUser = null;
+  if (params.currentUser) {
+    currentUser = params.currentUser.user ? params.currentUser.user : "na";
+    console.log("current User:", currentUser.user);
+  }
   function onSavedQueryClick(savedQuery) {
     params.onQuerySelect(savedQuery);
   }

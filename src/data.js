@@ -51,3 +51,27 @@ export const exampleData = {
     },
   ],
 };
+export const defaultQueryList = [
+  {
+    queryName: "default03",
+    q: "people",
+    language: "en",
+    pageSize: 10,
+  },
+  {
+    queryName: "default02",
+    q: "computer",
+    language: "en",
+    pageSize: 10,
+  },
+  {
+    queryName: "default01",
+    q: "work",
+    language: "en",
+    pageSize: 10,
+  },
+];
+
+export function loadDefaultList() {
+  return defaultQueryList;
+}
